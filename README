@@ -6,6 +6,8 @@ I have updated David's file to comply with the current guidelines (As of Spring 
 
 See dissertation.tex for an example and more details.
 
+Use make-dissertation.sh to compile (this has some special logic for creating the per chapter reference sections)
+
 Hope this is somewhat helpful.  Following David's initial remarks I welcome comments, questions, and improvements on this package. If your thesis uses this style, I'd really appreciate a notice. 
 ---Josh
 
