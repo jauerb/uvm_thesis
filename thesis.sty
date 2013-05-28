@@ -1,0 +1,276 @@
+%% UVM Thesis Style
+%% dvanhorn@cs.uvm.edu
+%% updated February 2013 by Joshua Auerbach
+%% joshua.auerbach@uvm.edu
+
+\typeout{UVM Thesis Style, Version 0.1}
+\typeout{Copyright (c) 2005 David Van Horn}
+\typeout{Licensed under the Academic Free License version 2.0}
+\typeout{Updated 2013 by Joshua Auerbach}
+
+\usepackage{setspace}
+\usepackage{chicago}
+\usepackage{fancyhdr}
+\usepackage{ifpdf}
+\ifpdf
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+\else
+\fi
+
+\usepackage{times}
+
+\setlength{\paperwidth}{8.5in}
+\setlength{\paperheight}{11in}
+
+
+\setlength{\oddsidemargin}{0.5in}
+\setlength{\topmargin}{0in}  
+\setlength{\textwidth}{6in}
+\setlength{\textheight}{8.06in}
+
+\def\thesis{\gdef\@thesistype{A Thesis}
+	\gdef\@citationthesistype{thesis}
+	\gdef\@acceptancethesistype{Thesis}}
+\def\dissertation{\gdef\@thesistype{A Dissertation}
+	\gdef\@citationthesistype{dissertation}
+	\gdef\@acceptancethesistype{Dissertation}}	
+\def\masterarts{\gdef\@degreetype{Master of Arts}}
+\def\masterscience{\gdef\@degreetype{Master of Science}}
+\def\doctorphilosophy{\gdef\@degreetype{Doctor of Philosophy}}
+
+\def\cs{\gdef\@spectype{Computer Science}}
+
+\def\octgrad{\gdef\@gradmonth{October}}
+\def\marchgrad{\gdef\@gradmonth{March}}
+\def\maygrad{\gdef\@gradmonth{May}}
+
+
+\renewcommand\maketitle{%
+  \thispagestyle{empty}
+  \null%
+  \vskip 6em
+  \begin{center}
+    {\LARGE \sc \@title \par} 
+    \vskip 5em 
+    \doublespacing
+    {\large
+    \@thesistype\ Presented\\
+    \vskip 5em     
+    by\\
+    \@author\\
+    to\\
+    The Faculty of the Graduate College\\
+    of\\
+    The University of Vermont\\
+    \vskip 5em
+    \singlespacing
+    In Partial Fullfillment of the Requirements\\
+    for the Degree of \@degreetype\\
+    Specializing in \@spectype\\
+    \vskip 3em    
+    \@gradmonth, \number\year\par
+    }
+  \end{center} \par
+  \newpage
+}
+
+
+%% Commands to define the defense committee.
+\newcommand\advisor[1]{\gdef\@advisor{#1}}
+\newcommand\readerone[1]{\gdef\@readerone{#1}}
+\newcommand\readertwo[1]{\gdef\@readertwo{#1}}
+\newcommand\chair[1]{\gdef\@chair{#1}}
+
+\newcommand\defensedate[1]{\gdef\@defensedate{#1}}
+
+\renewcommand{\headrulewidth}{0pt}
+
+\newcommand\mainmatter{
+  \pagestyle{fancy}
+  \fancyhf{}
+  \lhead{\leftmark}
+  \cfoot{\thepage}
+  \pagenumbering{arabic}
+  \doublespacing
+}
+
+\def\makeacceptance{%
+  \singlespacing
+  \noindent
+  Accepted by the Faculty of the Graduate College, The University of
+  Vermont, in partial fulfillment of the requirements for the degree of
+  \@degreetype, specializing in \@spectype.\par
+  \vskip 2.5em
+  \noindent
+  \@acceptancethesistype\ Examination Committee:
+
+  \begin{center}
+    \begin{tabular}{ll}
+      \\ \\ \\
+      \hspace{3in} &  Advisor\\
+      \cline{1-1} \@advisor & \ \\
+      \\ \\ \\
+      \ & \ \\
+      \cline{1-1} \@readerone & \ \\
+      \\ \\ \\
+      \ & \ \\
+      \@ifundefined{@readertwo}
+        {}
+        {\cline{1-1} \@readertwo & \ \\
+         \\ \\ \\}
+      \ & Chairperson\\
+      \cline{1-1} \@chair & \ \\
+      \\ \\ \\
+
+      \ & Dean, Graduate College \\
+      \cline{1-1} Domenico Grasso, Ph.D. & \ \\
+      \\ \\ \\
+      Date: \@defensedate & \ \\
+    \end{tabular}
+  \end{center}
+  \thispagestyle{empty}
+  \newpage
+}
+
+\renewenvironment{abstract}{
+  \thispagestyle{empty}
+  \section*{Abstract}
+  \singlespacing
+}{
+  \pagenumbering{roman}
+  \newpage
+}
+
+
+\newenvironment{citationspage}{
+  \addcontentsline{toc}{section}{Citations}
+  \vskip 6em
+  \begin{center}
+    {\large \sc CITATIONS \par} 
+    \singlespacing
+  \end{center}
+}{
+  \newpage
+}
+
+\newenvironment{dedication}{
+  \addcontentsline{toc}{section}{Dedication}
+  \begin{center}
+}{
+  \end{center}
+  \newpage
+}
+
+\newenvironment{acknowledgements}{
+  \section*{Acknowledgements}
+  \addcontentsline{toc}{section}{Acknowledgements}
+  \begin{doublespace}
+}{
+ \end{doublespace}
+ \newpage
+}
+
+\renewcommand\tableofcontents{%
+    \section*{\contentsname
+        \@mkboth{%
+           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
+    \@starttoc{toc}%
+    \newpage
+    }
+
+\renewcommand\listoffigures{%
+    \section*{\listfigurename
+      \@mkboth{\MakeUppercase\listfigurename}%
+              {\MakeUppercase\listfigurename}}%
+    \@starttoc{lof}%
+    \addcontentsline{toc}{section}{\listfigurename}
+    \newpage
+    }
+
+\renewcommand\listoftables{%
+    \section*{\listtablename
+      \@mkboth{%
+          \MakeUppercase\listtablename}{\MakeUppercase\listtablename}}%
+    \@starttoc{lot}%
+    \addcontentsline{toc}{section}{\listtablename}
+    \newpage
+    }
+
+%\let\references\thebibliography
+
+\newenvironment{references}[1]{
+  %\addcontentsline{toc}{section}{References}
+  \singlespacing
+  \section{References}\begin{list}
+	   {[\arabic{enumi}]}{\settowidth\labelwidth{#1}
+	     \leftmargin\labelwidth
+	     \advance\leftmargin\labelsep
+	     \advance\leftmargin\bibindent
+	     \itemindent -\bibindent
+	     \listparindent \itemindent
+	     \parsep \z@
+	     \usecounter{enumi}}
+	   \def\newblock{}
+	   \sloppy
+	   \sfcode`\.=1000\relax
+}{
+	\end{list}
+}
+
+\renewenvironment{thebibliography}[1]{
+  \newpage
+  \addcontentsline{toc}{section}{\refname}
+  \singlespacing
+  \section*{\refname\@mkboth
+    {\uppercase{\refname}}{\uppercase{\refname}}}\begin{list}
+	   {[\arabic{enumi}]}{\settowidth\labelwidth{#1}
+	     \leftmargin\labelwidth
+	     \advance\leftmargin\labelsep
+	     \advance\leftmargin\bibindent
+	     \itemindent -\bibindent
+	     \listparindent \itemindent
+	     \parsep \z@
+	     \usecounter{enumi}}
+	   \def\newblock{}
+	   \sloppy
+	   \sfcode`\.=1000\relax
+}{
+  \end{list}
+  \newpage
+}
+
+\def\@pnumwidth{1.55em}
+\def\@tocrmarg {2.55em}
+\def\@dotsep{4.5}
+\setcounter{tocdepth}{3}
+
+\renewcommand\contentsname{Table of Contents}
+
+\renewcommand*\l@section[2]{%
+  \ifnum \c@tocdepth >\z@
+    \addpenalty\@secpenalty
+    \addvspace{1.0em \@plus\p@}%
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak%
+	\leaders\hbox{$\m@th \mkern \@dotsep%
+           mu.\mkern \@dotsep mu$}\hfill%
+	 \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \endgroup
+  \fi}
+  
+\newcommand\citationheadingpublished{
+    \vskip 5em 
+    Material from this \@citationthesistype\ has been published in the following form:\\
+    \vskip 2em 
+}  
+
+
+
+

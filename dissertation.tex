@@ -1,0 +1,88 @@
+%% -*- LaTeX -*-
+\documentclass{report}
+
+\usepackage{thesis}
+
+%some other packages I found useful, comment out or remove if you do not need them
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage[pdftex]{graphicx}
+\usepackage{multirow}
+\usepackage{chapterbib}
+\usepackage{amssymb}
+\usepackage[titletoc,toc,title]{appendix}
+\usepackage{titlesec}
+
+\usepackage{cite}
+\usepackage{tabularx}
+
+\widowpenalty=1000000
+\clubpenalty=1000000
+
+
+\title{A Concrete Work of Abstract Genius}
+\author{John Doe}
+\defensedate{February 26, 2013}
+\dissertation                             %% or \dissertation
+\doctorphilosophy                      %% or \doctorphilosophy or \masterarts
+\cs                                 %% this is the only speciality defined.
+\maygrad                            %% or \octgrad or \marchgrad
+\advisor{Bunny Lebowski, Ph.D.}
+\readerone{Walter Sobchak, Ph.D.}
+\readertwo{Carl Hungus, Ph.D.}      %% Optional if MS.
+\chair{V.I. Lenin, Ph.D.}
+
+
+
+\begin{document}
+\maketitle
+\makeacceptance
+
+\begin{abstract}
+This a concrete work of abstract genius, comparable only to G\"odel's second
+incompleteness result, and John Fante's ``1933 Was A Bad Year.''
+\end{abstract}
+
+\begin{citationspage}
+\citationheadingpublished
+\noindent Doe, J. and B. Lebowski. (2009). My First Published Paper. {\it Proceedings of the IEEE Congress on Life}.
+\\ \\
+\noindent Doe, J. and B. Lebowski. (2010). My Second Published Paper. {\it The World's Greatest Journal}.
+\end{citationspage}
+
+\begin{dedication} %% Optional
+{\large 
+{\it in loving memory of} 
+\\
+\vskip 2em
+Alan Turing (1912-1954)}
+\end{dedication}
+
+\begin{acknowledgements}  %% Optional
+I'd like to take this opportunity to pour a little of my 40oz. out for all
+the homies that didn't make it.
+\end{acknowledgements}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+\sloppy
+
+%for journal format dissertation each chapter needs its own reference section, and want references to be included in global bibliography
+%this is accomplished using include commands
+%but, for things like the lit review (chapter 1) or an appendix, should use input so it does not get it's own references section
+
+%if not doing a journal format dissertation you can just use input for all chapters, or put text here directly.
+\input{chapter1}
+\include{chapter2}
+\include{chapter3}
+
+\bibliographystyle{chicago}
+\bibliography{example}
+
+\input{appendix}
+
+\end{document}

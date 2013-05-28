@@ -1,0 +1,20 @@
+This is a LaTeX style file for typesetting a UVM thesis or dissertation in compliance with the guideline of the Graduate College.  The package is free software, available under the terms of the Academic Free License version 2.0.
+
+I, Joshua Auerbach, adapted this from materials provided by David Van Horn (see http://www.cs.brandeis.edu/~dvanhorn/uvmlatexthesis/ and text below)
+
+I have updated David's file to comply with the current guidelines (As of Spring semester 2013) and to allow for journal format dissertations, but you will still need to bring a copy of your thesis to the Graduate College for a format review, and they may require you to make small changes. 
+
+See dissertation.tex for an example and more details.
+
+Hope this is somewhat helpful.  Following David's initial remarks I welcome comments, questions, and improvements on this package. If your thesis uses this style, I'd really appreciate a notice. 
+---Josh
+
+------------------------------------------
+
+David's original notice:
+
+This is a LaTeX style file for typesetting a graduate thesis in compliance with the guidelines of the Graduate College of the University of Vermont. The package is free software, available under the terms of the Academic Free License version 2.0.
+
+caveat emptor: You will still need to bring a copy of your thesis to the Graduate College for a format review, and they may require you to make small changes. Several people have taken a thesis using this style for review. Each time, different minor changes are requested by the reviewer. So, the process is not totally consistent, but this package should save you significant work. Send me any changes requested by the Graduate College and I will incorporate them into the style to save others the hassle.
+
+I welcome comments, questions, and improvements on this package. If your thesis uses this style, I'd really appreciate a notice. ---David
