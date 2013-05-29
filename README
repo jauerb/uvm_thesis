@@ -2,7 +2,8 @@ This is a LaTeX style file for typesetting a UVM thesis or dissertation in compl
 
 I, Joshua Auerbach, adapted this from materials provided by David Van Horn (see http://www.cs.brandeis.edu/~dvanhorn/uvmlatexthesis/ and text below)
 
-I have updated David's file to comply with the current guidelines (As of Spring semester 2013) and to allow for journal format dissertations, but you will still need to bring a copy of your thesis to the Graduate College for a format review, and they may require you to make small changes. 
+I have updated David's file to comply with the current guidelines (As of Spring semester 2013, see http://www.uvm.edu/~gradcoll/pdf/Guidelines%20for%20Writing%20and%20Defending%20Thesis%20and%20Disseration.pdf)
+and to allow for journal format dissertations, but you will still need to bring a copy of your thesis to the Graduate College for a format review, and they may require you to make small changes. 
 
 See dissertation.tex for an example and more details.
 
